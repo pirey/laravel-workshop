@@ -16,13 +16,13 @@ DB_USERNAME=database_username
 DB_PASSWORD=database_password
 ```
 
-## database design preview
+## setup authentication
+`php artisan make:auth`
+`php artisan migrate`
+
+## blog database design preview
 
 ```
-- passwords
-- users
-    - (provided by laravel)
-
 - blogs
     - id
     - title
@@ -50,4 +50,4 @@ Schema::create('blogs', function (Blueprint $table) {
 
 ## run the migration
 
-`php artisan migrate:fresh`
+`php artisan migrate`
