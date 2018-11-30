@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/post/create', 'PostController@create');
 Route::post('/post/store', 'PostController@store');
 Route::delete('/post/{id}', 'PostController@destroy');
+Route::get('post/edit/{id}', 'PostController@edit');
+Route::put('post/update/{id}', 'PostController@update');
+

@@ -44,4 +44,27 @@ class PostController extends Controller
 
         return redirect('/home');
     }
+
+    public function edit($id)
+    {
+        $data = [
+            'post' => Blog::findOrFail($id)
+        ];
+        return view('post.edit', $data);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $post = Blog::findOrFail($id);
+        $post->title = $request->input('title');
+        $post->content = $request->input('content');
+        $post->save();
+
+        $request
+            ->session()
+            ->flash('success_message', 'Post updated!');
+
+        return redirect('/home');
+    }
+
 }
