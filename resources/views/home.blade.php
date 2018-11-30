@@ -23,7 +23,7 @@
 
 
                     <div class="card-footer">
-                        <a href="/post/edit/{{ $post->id }}" class="btn btn-light">Edit</a>
+                        <a href="/post/edit/{{ $post->id }}" class="btn btn-link">Edit</a>
                         <form action="{{ url('post/' . $post->id) }}" method="post" style="display: inline-block">
                             {{ method_field('DELETE') }}
                             {!! csrf_field() !!}
