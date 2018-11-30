@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Blog;
 
 class PostController extends Controller
 {
@@ -14,5 +15,22 @@ class PostController extends Controller
     public function create()
     {
         return view('post.create');
+    }
+
+    public function store(Request $request)
+    {
+        $title = $request->input('title');
+        $content = $request->input('content');
+
+        $post = new Blog;
+        $post->title = $title;
+        $post->content = $content;
+        $post->save();
+
+        $request
+            ->session()
+            ->flash('success_message', 'Success create new post!');
+
+        return redirect('/home');
     }
 }

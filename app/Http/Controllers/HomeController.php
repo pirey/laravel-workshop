@@ -25,7 +25,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = [
-            'posts' => Blog::all(),
+            'posts' => Blog::orderBy('id', 'desc')->get(),
         ];
 
         return view('home', $data);
