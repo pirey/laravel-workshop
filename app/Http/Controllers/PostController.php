@@ -33,4 +33,15 @@ class PostController extends Controller
 
         return redirect('/home');
     }
+
+    public function destroy(Request $request, $id)
+    {
+        Blog::destroy($id);
+
+        $request
+            ->session()
+            ->flash('success_message', 'Post deleted!');
+
+        return redirect('/home');
+    }
 }
