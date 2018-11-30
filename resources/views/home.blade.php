@@ -20,6 +20,15 @@
                 <div class="card mb-3">
                     <div class="card-header">{{ $post->title }}</div>
                     <div class="card-body">{{ $post->content }}</div>
+
+
+                    <div class="card-footer">
+                        <form action="{{ url('post/' . $post->id) }}" method="post">
+                            {{ method_field('DELETE') }}
+                            {!! csrf_field() !!}
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
                 </div>
             @endforeach
 
