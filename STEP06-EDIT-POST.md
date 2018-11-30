@@ -2,7 +2,7 @@
 - edit `home.blade.php`
 
 ```
-                        <a href="/post/edit/{{ $post->id }}" class="btn btn-light">Edit</a>
+                        <a href="/post/edit/{{ $post->id }}" class="btn btn-link">Edit</a>
 ```
 
 - edit delete button (inline)
