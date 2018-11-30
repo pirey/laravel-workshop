@@ -5,6 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
+            @if (session()->has('success_message'))
+                <div class="alert alert-success">
+                    {{ session('success_message') }}
+                </div>
+            @endif
+
+
             <div class="mb-3">
                 <a href="/post/create" class="btn btn-primary">Create new post</a>
             </div>
