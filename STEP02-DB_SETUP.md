@@ -17,7 +17,9 @@ DB_PASSWORD=database_password
 ```
 
 ## setup authentication
+
 `php artisan make:auth`
+
 `php artisan migrate`
 
 ## blog database design preview
@@ -44,7 +46,7 @@ Schema::create('blogs', function (Blueprint $table) {
     $table->timestamps();
 
     $table->string('title'); // <---
-    $table-text('content');  // <---
+    $table->text('content');  // <---
 });
 ```
 
