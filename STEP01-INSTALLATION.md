@@ -37,9 +37,11 @@ php -r "unlink('composer-setup.php');"
 
 `php artisan generate:key`
 
-- set permission for storage folder
+- set permission for storage and cache folder
 
 `sudo chmod -R 777 storage`
+`sudo chmod -R 777 bootstrap/cache`
+
 
 - copy `.env.example` to `.env`
 
